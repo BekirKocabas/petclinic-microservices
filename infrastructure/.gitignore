@@ -1,0 +1,23 @@
+# Terraform state dosyaları
+*.tfstate
+*.tfstate.*
+
+# Terraform'un geri yedekleme dosyaları
+*.backup
+
+# .terraform klasörü, plugin'ler ve çalışma dosyaları
+.terraform/
+
+# tfvars dosyaları (gizli bilgileri içerebilir)
+*.tfvars
+*.tfvars.json
+
+# IDE ve editor'lere özel dosyalar
+.idea/
+.vscode/
+
+# macOS spesifik dosyalar
+.DS_Store
+
+# Windows spesifik dosyalar
+Thumbs.db
