@@ -1,0 +1,7 @@
+mykey = "bekir"
+ami = "ami-06ee6255945a96aba"
+region = "eu-central-1"
+instance_type = "t3.medium"
+jenkins_server_secgr = "petclinic-jenkins-server-secgr"
+jenkins-server-tag = "Jenkins Server of Petclinic"
+jenkins-profile = "petclinic-jenkins-server-profile"
