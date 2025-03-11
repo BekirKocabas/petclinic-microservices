@@ -1,5 +1,5 @@
 provider "aws" {
-  region  = "us-east-1"
+  region  = "eu-central-1"
 }
 
 variable "sec-gr-k8s" {
@@ -85,12 +85,12 @@ resource "aws_iam_instance_profile" "petclinic-master-server-profile" {
 }
 
 resource "aws_instance" "kube-master" {
-  ami = "ami-06ee6255945a96aba"
+  ami = "ami-07eef52105e8a2059"
   instance_type = "t3.medium"
   iam_instance_profile = aws_iam_instance_profile.petclinic-master-server-profile.name
   vpc_security_group_ids = [aws_security_group.k8s-sec-gr.id]
-  key_name = "bekir"
-  subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of us-east-1a
+  key_name = "petclinic-ansible-test-dev.key"
+  subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of eu-central-1a
   availability_zone = "eu-central-1a"
   tags = {
     Name = "kube-master"
@@ -102,11 +102,11 @@ resource "aws_instance" "kube-master" {
 }
 
 resource "aws_instance" "worker-1" {
-  ami = "ami-06ee6255945a96aba"
+  ami = "ami-07eef52105e8a2059"
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8s-sec-gr.id]
-  key_name = "bekir"
-  subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of us-east-1a
+  key_name = "petclinic-ansible-test-dev.key"
+  subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of eu-central-1a
   availability_zone = "eu-central-1a"
   tags = {
     Name = "worker-1"
@@ -118,11 +118,11 @@ resource "aws_instance" "worker-1" {
 }
 
 resource "aws_instance" "worker-2" {
-  ami = "ami-06ee6255945a96aba"
+  ami = "ami-07eef52105e8a2059"
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8s-sec-gr.id]
-  key_name = "bekir"
-  subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of us-east-1a
+  key_name = "petclinic-ansible-test-dev.key"
+  subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of eu-central-1a
   availability_zone = "eu-central-1a"
   tags = {
     Name = "worker-2"
