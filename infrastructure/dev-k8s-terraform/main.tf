@@ -89,7 +89,7 @@ resource "aws_instance" "kube-master" {
   instance_type = "t3.medium"
   iam_instance_profile = aws_iam_instance_profile.petclinic-master-server-profile.name
   vpc_security_group_ids = [aws_security_group.k8s-sec-gr.id]
-  key_name = "petclinic-ansible-test-dev.key"
+  key_name = "clarus"
   subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of eu-central-1a
   availability_zone = "eu-central-1a"
   tags = {
@@ -105,7 +105,7 @@ resource "aws_instance" "worker-1" {
   ami = "ami-07eef52105e8a2059"
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8s-sec-gr.id]
-  key_name = "petclinic-ansible-test-dev.key"
+  key_name = "clarus"
   subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of eu-central-1a
   availability_zone = "eu-central-1a"
   tags = {
@@ -121,7 +121,7 @@ resource "aws_instance" "worker-2" {
   ami = "ami-07eef52105e8a2059"
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8s-sec-gr.id]
-  key_name = "petclinic-ansible-test-dev.key"
+  key_name = "clarus"
   subnet_id = "subnet-0f3e09efb2cc024c2"  # select own subnet_id of eu-central-1a
   availability_zone = "eu-central-1a"
   tags = {
